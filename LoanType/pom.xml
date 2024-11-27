@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.sami.MicroService</groupId>
-	<artifactId>LoanRequest-service</artifactId>
+	<artifactId>LoanType</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>LoanRequest-service</name>
-	<description>LoanRequest-service</description>
+	<name>LoanType</name>
+	<description>LoanType</description>
 	<url/>
 	<licenses>
 		<license/>
