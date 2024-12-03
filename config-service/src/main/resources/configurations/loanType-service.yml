@@ -12,7 +12,7 @@ spring:
     show-sql: true
   cloud:
     config:
-      enabled: false
+      enabled: true
     discovery:
       enabled: true
 server:

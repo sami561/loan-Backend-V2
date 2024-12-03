@@ -19,6 +19,7 @@ public class Agency {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    private String contactEmail;
-    private String contactPhone;
+    private String address;
+    private String contactNumber;
+    private String email;
 }

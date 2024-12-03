@@ -1,24 +1,5 @@
 spring:
   application:
     name: agency-service
-  datasource:
-    url: jdbc:mysql://localhost/bd-agency?createDatabaseIfNotExist=true&serverTimezone=UTC
-    username: root
-    password:
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-  cloud:
-    config:
-      enabled: false
-    discovery:
-      enabled: true
-server:
-  port: 8082
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
+  config:
+    import: optional:configserver:http://localhost:9999

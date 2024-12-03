@@ -18,6 +18,10 @@ public class Governorate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private  String name;
-    private  String code ;
+    private String name;
+    private String region;
+    private String capital;
+    private Long population;
+    private Double areaSize;
+    private String postalCode;
 }

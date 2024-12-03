@@ -8,6 +8,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
 
 @Getter
 @Setter
@@ -18,9 +21,10 @@ public class LoanRequest {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
-    String name;
-    String interestRate;
-    Double maxAmount;
-    Double minAmount;
-    String description;
+    private BigDecimal amountRequested;
+    private LocalDate requestedDate;
+    private String status;
+    private String borrowerName;
+    private BigDecimal borrowerIncome;
+    private String borrowerAddress;
 }
