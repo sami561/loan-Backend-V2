@@ -1,9 +1,8 @@
 package com.sami.microservice.loanrequestservice.entites;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.sami.microservice.loanrequestservice.Model.Agency;
+import com.sami.microservice.loanrequestservice.Model.LoanType;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,4 +26,11 @@ public class LoanRequest {
     private String borrowerName;
     private BigDecimal borrowerIncome;
     private String borrowerAddress;
+    private int loantypeId;
+    @Transient
+    private LoanType loanType;
+    private  int agencyId;
+    @Transient
+    private Agency agency;
+
 }

@@ -25,12 +25,12 @@ public class LoanTypeController {
         }
     }
     @PostMapping("/add")
-    public ResponseEntity<LoanType>addLoanRequest(@RequestBody LoanType lr){
+    public ResponseEntity<LoanType>addLoanType(@RequestBody LoanType lr){
         LoanType gov = iLoanTypeService.createLoanType(lr);
         return ResponseEntity.ok(gov);
     }
     @PutMapping("/update")
-    public ResponseEntity<LoanType>updateLoanRequest(@RequestBody LoanType lr){
+    public ResponseEntity<LoanType>updateLoanType(@RequestBody LoanType lr){
         LoanType lrr = iLoanTypeService.updateLoanType(lr);
         return ResponseEntity.ok(lrr);
     }
