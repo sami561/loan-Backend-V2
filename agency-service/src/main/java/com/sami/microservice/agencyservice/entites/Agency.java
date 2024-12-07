@@ -1,9 +1,7 @@
 package com.sami.microservice.agencyservice.entites;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.sami.microservice.agencyservice.Model.Governorate;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,4 +20,7 @@ public class Agency {
     private String address;
     private String contactNumber;
     private String email;
+    private int governoratId;
+    @Transient
+    private Governorate governorate;
 }
