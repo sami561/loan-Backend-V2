@@ -1,9 +1,15 @@
+jwt:
+  auth:
+    converter:
+      resource-id: ms-client-auth
+      principle-attribute: preferred_username
 spring:
   security:
     oauth2:
       resourceserver:
         jwt:
           issuer-uri: http://localhost:9098/realms/ms-loan
+          jwk-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
   cloud:
     discovery:
       enabled: true
@@ -17,3 +23,4 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
+
