@@ -15,6 +15,17 @@
         <module name="agency-service" />
         <module name="governorates-service" />
       </profile>
+      <profile name="Annotation profile for agent" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="appointment-service" />
+        <module name="agent" />
+        <module name="client-service" />
+      </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
@@ -22,6 +33,9 @@
       <module name="LoanRequest-service" options="-parameters" />
       <module name="LoanType" options="-parameters" />
       <module name="agency-service" options="-parameters" />
+      <module name="agent" options="-parameters" />
+      <module name="appointment-service" options="-parameters" />
+      <module name="client-service" options="-parameters" />
       <module name="config-service" options="-parameters" />
       <module name="discovery-service" options="-parameters" />
       <module name="gateway-service" options="-parameters" />
