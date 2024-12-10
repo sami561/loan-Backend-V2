@@ -2,15 +2,15 @@ package com.sami.microservice.agent.service;
 
 import com.sami.microservice.agent.entities.Agent;
 import com.sami.microservice.agent.repository.AgentRepository;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@AllArgsConstructor
 public class ServiceAgent implements  IServiceAgent{
-    public  AgentRepository agentRepository;
+    @Autowired
+      AgentRepository agentRepository;
     @Override
     public Agent createAgent(Agent a) {
         return agentRepository.save(a);

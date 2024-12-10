@@ -3,6 +3,7 @@ package com.sami.microservice.clientservice.service;
 import com.sami.microservice.clientservice.entities.Client;
 import com.sami.microservice.clientservice.repository.ClientRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,7 +11,8 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class ServiceClient implements IServiceClient {
-    public  ClientRepository clientRepository;
+    @Autowired
+     ClientRepository clientRepository;
     @Override
     public Client createClient(Client c) {
         return clientRepository.save(c);

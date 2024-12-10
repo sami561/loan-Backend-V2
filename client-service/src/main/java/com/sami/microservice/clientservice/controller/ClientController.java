@@ -3,6 +3,7 @@ package com.sami.microservice.clientservice.controller;
 import com.sami.microservice.clientservice.entities.Client;
 import com.sami.microservice.clientservice.service.IServiceClient;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,9 +11,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/client")
-@AllArgsConstructor
-public class ClientController {
-    private   IServiceClient iServiceClient;
+
+ class ClientController {
+    @Autowired
+       IServiceClient iServiceClient;
     @GetMapping("/find/{id}")
     public ResponseEntity<Client> findClient(@PathVariable("id") int id){
         Client c = iServiceClient.findClientById(id);

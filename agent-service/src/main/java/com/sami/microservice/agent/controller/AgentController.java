@@ -2,7 +2,7 @@ package com.sami.microservice.agent.controller;
 
 import com.sami.microservice.agent.entities.Agent;
 import com.sami.microservice.agent.service.IServiceAgent;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,9 +10,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/agent")
-@AllArgsConstructor
 public class AgentController {
-    private   IServiceAgent iServiceAgent;
+    @Autowired
+     IServiceAgent iServiceAgent;
     @GetMapping("/find/{id}")
     public ResponseEntity<Agent> findAgent(@PathVariable("id") int id){
         Agent a= iServiceAgent.findAgentById(id);

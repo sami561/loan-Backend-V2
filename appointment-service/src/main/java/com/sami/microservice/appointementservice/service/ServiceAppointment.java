@@ -5,14 +5,15 @@ import com.sami.microservice.appointementservice.entities.Appointment;
 import com.sami.microservice.appointementservice.repository.AppointmentRepository;
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@AllArgsConstructor
 public class ServiceAppointment implements IServiceAppointment {
-    public  AppointmentRepository appointmentRepository;
+    @Autowired
+    AppointmentRepository appointmentRepository;
     @Override
     public Appointment createAppointment(Appointment a) {
         return appointmentRepository.save(a);

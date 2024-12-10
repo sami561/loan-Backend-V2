@@ -3,6 +3,7 @@ package com.sami.microservice.appointementservice.controller;
 import com.sami.microservice.appointementservice.entities.Appointment;
 import com.sami.microservice.appointementservice.service.IServiceAppointment;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,9 +11,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/appointment")
-@AllArgsConstructor
-public class PatientController {
-    private   IServiceAppointment iServiceAppointment;
+public class AppointmentController {
+    @Autowired
+     IServiceAppointment iServiceAppointment;
     @GetMapping("/find/{id}")
     public ResponseEntity<Appointment> findAppointment(@PathVariable("id") int id){
         Appointment a = iServiceAppointment.findAppointmentById(id);
