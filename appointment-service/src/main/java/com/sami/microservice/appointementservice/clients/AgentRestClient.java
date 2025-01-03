@@ -5,8 +5,10 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.util.Optional;
+
 @FeignClient(name = "AGENT-SERVICE")
 public interface AgentRestClient {
     @GetMapping("/agent/find/{id}")
-    Agent getAgentById(@PathVariable int id);
+    Optional<Agent> getAgentById(@PathVariable int id);
 }

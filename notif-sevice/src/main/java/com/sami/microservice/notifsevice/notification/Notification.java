@@ -1,6 +1,7 @@
-package com.sami.microservice.notificationservice.notification;
+package com.sami.microservice.notifsevice.notification;
 
 
+import com.sami.microservice.notifsevice.kafka.appointment.AppointmentConfirmation;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -19,6 +20,6 @@ public class Notification {
     private String id;
     private NotificationType type;
     private LocalDateTime notificationDate;
-    private OrderConfirmation orderConfirmation;
-    private PaymentConfirmation paymentConfirmation;
+    private AppointmentConfirmation appointmentConfirmation;
+
 }

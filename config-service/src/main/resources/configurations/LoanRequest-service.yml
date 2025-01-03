@@ -11,11 +11,11 @@ spring:
     show-sql: true
   cloud:
     config:
-      enabled: false
+      enabled: true
     discovery:
       enabled: true
 server:
-  port: 8081
+  port: 8089
 eureka:
   instance:
     prefer-ip-address: true

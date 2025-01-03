@@ -2,6 +2,8 @@ package com.sami.microservice.appointementservice.service;
 
 
 import com.sami.microservice.appointementservice.entities.Appointment;
+import com.sami.microservice.appointementservice.notification.AppointmentNotificationRequest;
+import com.sami.microservice.appointementservice.notification.NotificationProducer;
 import com.sami.microservice.appointementservice.repository.AppointmentRepository;
 
 import lombok.AllArgsConstructor;
@@ -13,9 +15,17 @@ import java.util.List;
 @Service
 public class ServiceAppointment implements IServiceAppointment {
     @Autowired
-    AppointmentRepository appointmentRepository;
+     AppointmentRepository appointmentRepository;
+    @Autowired
+    NotificationProducer notificationProducer;
     @Override
     public Appointment createAppointment(Appointment a) {
+        notificationProducer.sendNotification(
+                new AppointmentNotificationRequest(
+                        a.getDateRdv(),
+                        a.getStatus()
+                )
+        );
         return appointmentRepository.save(a);
     }
 

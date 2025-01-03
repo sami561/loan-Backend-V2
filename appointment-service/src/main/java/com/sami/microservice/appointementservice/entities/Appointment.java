@@ -1,10 +1,10 @@
 package com.sami.microservice.appointementservice.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.sami.microservice.appointementservice.Model.Agency;
+import com.sami.microservice.appointementservice.Model.Agent;
+import com.sami.microservice.appointementservice.Model.Client;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 
@@ -20,15 +20,30 @@ public class Appointment {
 
     private String status;
 
+    @Transient
+    private Agent agent;
+    private int agentId;
+
+    @Transient
+    private Agency agency;
+    private int agencyId;
+
+    @Transient
+    private Client client;
+    private int clientId;
+
     // No-args constructor
     public Appointment() {
     }
 
     // All-args constructor
-    public Appointment(int id, LocalDateTime dateRdv, String status) {
+    public Appointment(int id, LocalDateTime dateRdv, String status, int agentId, int agencyId, int clientId) {
         this.id = id;
         this.dateRdv = dateRdv;
         this.status = status;
+        this.agentId = agentId;
+        this.agencyId = agencyId;
+        this.clientId = clientId;
     }
 
     // Getters and Setters
@@ -56,6 +71,54 @@ public class Appointment {
         this.status = status;
     }
 
+    public Agent getAgent() {
+        return agent;
+    }
+
+    public void setAgent(Agent agent) {
+        this.agent = agent;
+    }
+
+    public int getAgentId() {
+        return agentId;
+    }
+
+    public void setAgentId(int agentId) {
+        this.agentId = agentId;
+    }
+
+    public Agency getAgency() {
+        return agency;
+    }
+
+    public void setAgency(Agency agency) {
+        this.agency = agency;
+    }
+
+    public int getAgencyId() {
+        return agencyId;
+    }
+
+    public void setAgencyId(int agencyId) {
+        this.agencyId = agencyId;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public int getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(int clientId) {
+        this.clientId = clientId;
+    }
+
     // toString method
     @Override
     public String toString() {
@@ -63,10 +126,13 @@ public class Appointment {
                 "id=" + id +
                 ", dateRdv=" + dateRdv +
                 ", status='" + status + '\'' +
+                ", agentId=" + agentId +
+                ", agencyId=" + agencyId +
+                ", clientId=" + clientId +
                 '}';
     }
 
-    // Optional: equals and hashCode methods
+    // equals and hashCode methods
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

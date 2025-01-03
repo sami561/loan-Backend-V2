@@ -1,4 +1,4 @@
-package com.sami.microservice.notificationservice.notification;
+package com.sami.microservice.notifsevice.notification;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 

@@ -14,20 +14,24 @@
         <module name="discovery-service" />
         <module name="agency-service" />
         <module name="governorates-service" />
+        <module name="notif-sevice" />
       </profile>
-      <profile name="Annotation profile for appointement-service" enabled="true">
+      <profile name="Annotation profile for client-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
-        <module name="agent" />
         <module name="appointment-service" />
-        <module name="notification-service" />
+        <module name="agent" />
         <module name="client-service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="notification" target="17" />
+      <module name="notification-service" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -41,6 +45,8 @@
       <module name="discovery-service" options="-parameters" />
       <module name="gateway-service" options="-parameters" />
       <module name="governorates-service" options="-parameters" />
+      <module name="notif-sevice" options="-parameters" />
+      <module name="notification" options="-parameters" />
       <module name="notification-service" options="-parameters" />
     </option>
   </component>
